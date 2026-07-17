@@ -25,7 +25,10 @@ public class ProductService {
 
     private final IProductRepositorySQL repository;
 
+
     public Mono<Product> findById(Long id) {
+       
+                
         return repository.findById(id)
                 .switchIfEmpty(Mono.error(new ProductNotFoundException("Producto no encontrado: " + id)))
                 .map(ProductMapper::toProduct);
