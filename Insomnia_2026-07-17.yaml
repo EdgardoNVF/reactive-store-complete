@@ -1,0 +1,115 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1783040343756
+  modified: 1783040343756
+  description: ""
+collection:
+  - name: reactive-store
+    meta:
+      id: fld_a89ccf78765f47eea78aba6c0a41016c
+      created: 1783691994222
+      modified: 1783691994222
+      sortKey: -1783691994222
+      description: ""
+    children:
+      - url: localhost:9091/sql/products
+        name: get all from memory
+        meta:
+          id: req_fa5ee209b41a4f768d75e6afd005fec1
+          created: 1783692000738
+          modified: 1784214545186
+          isPrivate: false
+          description: ""
+          sortKey: -1783692000738
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:9091/sql/products
+        name: insert into memory
+        meta:
+          id: req_e5cd914ccfba47d1a447e81071b7b510
+          created: 1783692219593
+          modified: 1784214355883
+          isPrivate: false
+          description: ""
+          sortKey: -1783692219593
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"cafe",
+            	"description":"cafe de olla tradicional",
+            	"price":3,
+            	"stock":20,
+            	"active":true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:9091/sql/products/stream
+        name: stream from memory
+        meta:
+          id: req_4b8231ff0b3544a6899b57d74086707b
+          created: 1783692613368
+          modified: 1784214486668
+          isPrivate: false
+          description: ""
+          sortKey: -1783692613368
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:9090/memory/products/21e4c66c-9864-4129-8df6-073ad1a04091
+        name: buscar por id
+        meta:
+          id: req_65157273d4714593962f6c91318d06ee
+          created: 1783692995772
+          modified: 1783693078887
+          isPrivate: false
+          description: ""
+          sortKey: -1783692995772
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1783040518068
+    modified: 1783040518068
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1783040518063
+    modified: 1783040518063
+    isPrivate: false
